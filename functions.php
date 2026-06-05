@@ -118,7 +118,7 @@ function get_category_icon( $category_name ) {
 }
 
 /**
- * Get excerpt with custom length
+ * Get excerpt with custom length and remove ads
  * 
  * @param int $post_id The post ID
  * @param int $length The excerpt length in words
@@ -133,6 +133,12 @@ function get_custom_excerpt( $post_id, $length = 15 ) {
 	} else {
 		$excerpt = $post->post_content;
 	}
+
+	// Remove ad-related content
+	$excerpt = preg_replace( '/<ins.*?<\/ins>/is', '', $excerpt );
+	$excerpt = preg_replace( '/<script.*?<\/script>/is', '', $excerpt );
+	$excerpt = preg_replace( '/<iframe.*?<\/iframe>/is', '', $excerpt );
+	$excerpt = preg_replace( '/\[ad[^\]]*\]/i', '', $excerpt );
 
 	$excerpt = wp_strip_all_tags( $excerpt );
 	$excerpt = wp_trim_words( $excerpt, $length, '...' );

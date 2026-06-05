@@ -297,6 +297,12 @@ body {
 	margin-bottom: var(--spacing-sm);
 	line-height: 1.4;
 	min-height: auto;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
 }
 
 .post-title a {
@@ -487,6 +493,31 @@ body {
 .no-content-section p {
 	font-size: 1.1rem;
 	color: var(--text-light);
+}
+
+/* =====================================================
+   ADS & ADVERTISING - HIDE ALL ADS IN POST CARDS
+   ===================================================== */
+
+.post-content ins,
+.post-content .adsbygoogle,
+.post-content [data-ad-client],
+.post-content [data-ad-slot],
+.post-content .ad,
+.post-content .advertisement,
+.post-content .ads,
+.post-card ins.adsbygoogle,
+.post-card iframe[id*="google"],
+.post-card iframe[src*="googleads"],
+.post-card iframe[src*="ads"],
+.post-card script[src*="ads"],
+.post-card script[src*="google"],
+.post-card .google-auto-placed {
+	display: none !important;
+	visibility: hidden !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 /* =====================================================
