@@ -53,7 +53,7 @@ function get_posts_by_category( $category_id, $posts_per_page = 4, $paged = 1 ) 
 }
 
 /**
- * Get all categories with posts
+ * Get all categories with posts (more than 4 posts)
  * 
  * @return array Array of categories
  */
@@ -64,7 +64,15 @@ function get_categories_with_posts() {
 		'hide_empty' => true,
 	) );
 
-	return $categories;
+	// Filter categories to show only those with more than 4 posts
+	$filtered_categories = array();
+	foreach ( $categories as $category ) {
+		if ( $category->count > 4 ) {
+			$filtered_categories[] = $category;
+		}
+	}
+
+	return $filtered_categories;
 }
 
 /**
