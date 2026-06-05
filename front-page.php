@@ -62,7 +62,9 @@ get_header(); ?>
 												alt="<?php echo esc_attr( get_the_title() ); ?>"
 												class="post-thumbnail"
 											/>
-											<div class="post-overlay"></div>
+											<div class="post-overlay">
+												<span class="post-category-badge"><?php echo esc_html( $category->name ); ?></span>
+											</div>
 										</div>
 
 										<div class="post-content">
