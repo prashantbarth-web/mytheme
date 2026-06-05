@@ -7,8 +7,8 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main">
+<div id="primary" class="content-area" style="width: 100%; max-width: none;">
+	<main id="main" class="site-main" style="width: 100%; max-width: none;">
 
 		<?php
 		/**
@@ -56,16 +56,7 @@ get_header(); ?>
 									$post_id = get_the_ID();
 									?>
 									<article class="post-card">
-										<div class="post-thumbnail-wrapper">
-											<img 
-												src="<?php echo esc_url( get_featured_image_url( $post_id ) ); ?>" 
-												alt="<?php echo esc_attr( get_the_title() ); ?>"
-												class="post-thumbnail"
-											/>
-											<div class="post-overlay">
-												<span class="post-category-badge"><?php echo esc_html( $category->name ); ?></span>
-											</div>
-										</div>
+										<span class="post-category-badge"><?php echo esc_html( $category->name ); ?></span>
 
 										<div class="post-content">
 											<h3 class="post-title">
