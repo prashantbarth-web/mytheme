@@ -53,9 +53,9 @@ body {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 100%;
 	margin: 0 auto;
-	padding: 0 var(--spacing-md);
+	padding: 0 var(--spacing-lg);
 }
 
 /* =====================================================
@@ -214,7 +214,7 @@ body {
 
 .posts-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: var(--spacing-lg);
 }
 
@@ -578,7 +578,7 @@ body {
 /* Tablets & Medium Desktop */
 @media (max-width: 1199px) {
 	.posts-grid {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.hero-title {
@@ -590,7 +590,7 @@ body {
 	}
 
 	.category-navigator {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
